@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Race Tracker - Track Your Running Journey</title>
+    <link rel="icon" type="image/png" href="app-icon.png">
     <style>
         * {
             margin: 0;
@@ -128,6 +129,15 @@
 
         body.dark-mode .hero {
             background: linear-gradient(180deg, transparent, var(--surface-dark));
+        }
+
+        .hero-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 32px;
+            border-radius: 26.67%;
+            box-shadow: 0 20px 60px rgba(0, 122, 255, 0.3);
+            display: block;
         }
 
         .hero h1 {
@@ -512,6 +522,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
+            <img src="app-icon.png" alt="Race Tracker App Icon" class="hero-icon fade-in-up">
             <h1 class="fade-in-up">Track Every <span class="gradient-text">Step</span> of Your Running Journey</h1>
             <p class="fade-in-up">Organize your races, track your progress, and achieve your personal best with Race Tracker.</p>
             <div class="cta-buttons fade-in-up">
