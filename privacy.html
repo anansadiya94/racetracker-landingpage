@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Race Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5E5CE6;
+            --bg-light: #ffffff;
+            --bg-dark: #000000;
+            --surface-light: #f5f5f7;
+            --surface-dark: #1c1c1e;
+            --text-light: #1d1d1f;
+            --text-dark: #f5f5f7;
+            --text-secondary-light: #6e6e73;
+            --text-secondary-dark: #98989d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(255, 255, 255, 0.72);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode header {
+            background: rgba(28, 28, 30, 0.72);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        body.dark-mode .nav-links a {
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content */
+        main {
+            padding: 80px 0 120px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .effective-date {
+            font-size: 16px;
+            color: var(--text-secondary-light);
+            margin-bottom: 60px;
+        }
+
+        body.dark-mode .effective-date {
+            color: var(--text-secondary-dark);
+        }
+
+        .privacy-item {
+            margin-bottom: 40px;
+        }
+
+        .privacy-item h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        body.dark-mode .privacy-item h2 {
+            color: var(--text-dark);
+        }
+
+        .privacy-item p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary-light);
+            margin-bottom: 12px;
+        }
+
+        body.dark-mode .privacy-item p {
+            color: var(--text-secondary-dark);
+        }
+
+        .privacy-item ul {
+            margin-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-secondary-light);
+        }
+
+        body.dark-mode .privacy-item ul {
+            color: var(--text-secondary-dark);
+        }
+
+        .privacy-item li {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            font-style: italic;
+            font-size: 14px;
+            margin-top: 16px;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--surface-light);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        body.dark-mode footer {
+            background: var(--surface-dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        footer p {
+            color: var(--text-secondary-light);
+            font-size: 14px;
+        }
+
+        body.dark-mode footer p {
+            color: var(--text-secondary-dark);
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            main {
+                padding: 60px 0 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Race Tracker</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="effective-date">Effective Date: December 2, 2025</p>
+
+            <div class="privacy-item">
+                <h2>Your Privacy Matters</h2>
+                <p>Race Tracker is designed with your privacy in mind. All your data stays on your device, and we never collect, share, or sell your personal information.</p>
+            </div>
+
+            <div class="privacy-item">
+                <h2>What We Store</h2>
+                <p>The app stores the following information locally on your device:</p>
+                <ul>
+                    <li>Your profile information (name, age, preferred distances)</li>
+                    <li>Your race data (past and upcoming races including dates, times, distances, and notes)</li>
+                    <li>App preferences and settings</li>
+                </ul>
+            </div>
+
+            <div class="privacy-item">
+                <h2>How We Store It</h2>
+                <p>All data is stored locally on your device using iOS standard storage (UserDefaults). Your data is never transmitted to external servers, and we have no access to your information. The data remains on your device and is protected by your device's security features.</p>
+            </div>
+
+            <div class="privacy-item">
+                <h2>No Third-Party Tracking</h2>
+                <p>Race Tracker does not use any analytics, tracking, or advertising services. We don't collect usage data, crash reports, or any other telemetry. We don't use cookies, pixels, or any other tracking technologies.</p>
+            </div>
+
+            <div class="privacy-item">
+                <h2>Data Control</h2>
+                <p>You have complete control over your data:</p>
+                <ul>
+                    <li>You can view, edit, or delete your profile information at any time within the app</li>
+                    <li>You can add, edit, or delete any race entries at any time</li>
+                    <li>Deleting the app will permanently remove all your data from your device</li>
+                    <li>There are no backups of your data on our servers because we don't have any servers</li>
+                </ul>
+            </div>
+
+            <div class="privacy-item">
+                <h2>iCloud Sync</h2>
+                <p>Currently, Race Tracker does not sync data via iCloud or any other cloud service. Your data remains exclusively on your device. If you delete the app or switch devices, your data will not be transferred.</p>
+            </div>
+
+            <div class="privacy-item">
+                <h2>Children's Privacy</h2>
+                <p>Race Tracker does not knowingly collect any personal information from children. The app is designed for general audiences and does not require age verification. All data stays on the device and is never transmitted to us.</p>
+            </div>
+
+            <div class="privacy-item">
+                <h2>Changes to This Policy</h2>
+                <p>We may update this privacy policy from time to time to reflect changes in the app or legal requirements. If we make material changes, we will notify you through the app or update the effective date above. Your continued use of the app after any changes constitutes acceptance of the updated policy.</p>
+                <p class="last-updated">Last updated: December 2, 2025</p>
+            </div>
+
+            <div class="privacy-item">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding this privacy policy or your data, please contact us:</p>
+                <ul>
+                    <li>Through the App Store support page</li>
+                    <li>By visiting our website at <a href="https://anansadiya94.github.io/racetracker-landingpage">https://anansadiya94.github.io/racetracker-landingpage</a></li>
+                </ul>
+            </div>
+
+            <div class="privacy-item">
+                <h2>Your Rights</h2>
+                <p>Since all your data is stored locally on your device and we don't collect any information, you automatically have complete control over your data. You can access, modify, or delete your data at any time directly within the app.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Race Tracker. All rights reserved. | <a href="index.html">Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // Update icon and save preference
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
