@@ -12,3 +12,4 @@ This is the marketing website for Race Tracker, a native iOS app that helps runn
 - **Zero Dependencies**: Pure HTML/CSS/JavaScript - no frameworks or build tools required
 - **Performance**: Lightweight and fast with minimal JavaScript
 - **Accessibility**: Semantic HTML with ARIA labels for interactive elements
+- **Privacy Policy**: Dedicated privacy policy page at `/privacy.html` for App Store compliance
