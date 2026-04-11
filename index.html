@@ -437,6 +437,8 @@
     .bc-dist     { grid-column: 1;     grid-row: 3; }
     .bc-profile  { grid-column: 2;     grid-row: 3; }
     .bc-sync     { grid-column: 3;     grid-row: 3; }
+    .bc-location { grid-column: 1;     grid-row: 4; }
+    .bc-widgets  { grid-column: 2 / 4; grid-row: 4; }
 
     .bc-history::before  { background: linear-gradient(90deg, var(--blue), var(--purple)); }
     .bc-planning::before { background: var(--orange); }
@@ -444,6 +446,8 @@
     .bc-dist::before     { background: var(--green); }
     .bc-profile::before  { background: var(--red); }
     .bc-sync::before     { background: linear-gradient(90deg, var(--blue), var(--sky)); }
+    .bc-location::before { background: var(--green); }
+    .bc-widgets::before  { background: linear-gradient(90deg, var(--orange), var(--red)); }
 
     .bc-icon {
       font-size: 26px;
@@ -1016,6 +1020,20 @@
           <span class="bc-icon">☁️</span>
           <h3 class="bc-name">iCloud Sync</h3>
           <p class="bc-desc">Races and profile sync automatically across your Apple devices. Reinstall anytime — your data comes back.</p>
+        </div>
+
+        <!-- Location -->
+        <div class="bc bc-location reveal">
+          <span class="bc-icon">📍</span>
+          <h3 class="bc-name">Race Locations</h3>
+          <p class="bc-desc">Pin every race to a city with Apple Maps search. Build a map of everywhere you've raced.</p>
+        </div>
+
+        <!-- Widgets -->
+        <div class="bc bc-widgets reveal">
+          <span class="bc-icon">📲</span>
+          <h3 class="bc-name">Home Screen Widgets</h3>
+          <p class="bc-desc">Keep your next race countdown and personal bests on your home screen — always a glance away.</p>
         </div>
 
       </div>
