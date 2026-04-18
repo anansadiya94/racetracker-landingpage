@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" href="app-icon-dark.png" media="(prefers-color-scheme: dark)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock:ital@0;1&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +40,7 @@
       --text-2:         #6B6860;
       --text-3:         #A8A49C;
 
-      --font-display: 'Cormorant Garamond', serif;
+      --font-display: 'Gloock', serif;
       --font-body:    'Archivo', sans-serif;
       --radius-lg:    24px;
       --radius-md:    16px;
@@ -109,10 +109,7 @@
     }
 
     .nav-logo span {
-      background: linear-gradient(120deg, var(--blue), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--blue);
     }
 
     .nav-right {
@@ -252,11 +249,8 @@
 
     .hero-h1 em {
       font-style: italic;
-      font-weight: 600;
-      background: linear-gradient(120deg, var(--blue) 0%, var(--purple) 55%, var(--orange) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-weight: 400;
+      color: var(--blue);
     }
 
     .hero-sub {
@@ -433,14 +427,6 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.32);
     }
 
-    /* Color accent bar at top */
-    .bc::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-    }
-
     .bc-history  { grid-column: 1 / 3; grid-row: 1 / 3; }
     .bc-planning { grid-column: 3;     grid-row: 1; }
     .bc-stats    { grid-column: 3;     grid-row: 2; }
@@ -450,16 +436,6 @@
     .bc-location { grid-column: 1;     grid-row: 4; }
     .bc-strava   { grid-column: 2;     grid-row: 4; }
     .bc-widgets  { grid-column: 3;     grid-row: 4; }
-
-    .bc-history::before  { background: linear-gradient(90deg, var(--blue), var(--purple)); }
-    .bc-planning::before { background: var(--orange); }
-    .bc-stats::before    { background: var(--purple); }
-    .bc-dist::before     { background: var(--green); }
-    .bc-profile::before  { background: var(--red); }
-    .bc-sync::before     { background: linear-gradient(90deg, var(--blue), var(--sky)); }
-    .bc-location::before { background: var(--green); }
-    .bc-strava::before   { background: #FC4C02; }
-    .bc-widgets::before  { background: linear-gradient(90deg, var(--orange), var(--red)); }
 
 
     .bc-icon {
@@ -885,16 +861,17 @@
     }
 
     .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s ease;
     }
 
     .faq-item.open .faq-answer {
-      max-height: 200px;
+      grid-template-rows: 1fr;
     }
 
     .faq-answer-inner {
+      overflow: hidden;
       padding: 0 28px 22px;
       font-size: 14.5px;
       color: var(--text-2);
@@ -923,10 +900,7 @@
     }
 
     .footer-logo span {
-      background: linear-gradient(120deg, var(--blue), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--blue);
     }
 
     .footer-copy {
