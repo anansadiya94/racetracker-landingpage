@@ -134,7 +134,7 @@
     }
 
     .nav-links a {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 500;
       color: var(--text-2);
       text-decoration: none;
@@ -207,7 +207,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -438,9 +438,9 @@
     .bc-history .bc-name { font-size: 38px; margin-bottom: 12px; }
 
     .bc-desc {
-      font-size: 13.5px;
+      font-size: 14px;
       color: var(--text-2);
-      line-height: 1.68;
+      line-height: 1.65;
       max-width: 320px;
     }
 
@@ -676,7 +676,7 @@
     .dev-card-3 { top: 185px; left: 32px; }
 
     .dev-label {
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -845,7 +845,7 @@
     .faq-answer-inner {
       overflow: hidden;
       padding: 0 28px 22px;
-      font-size: 14.5px;
+      font-size: 14px;
       color: var(--text-2);
       line-height: 1.65;
     }
@@ -1215,7 +1215,55 @@
       .cta-box   { padding: 48px 24px; }
 
       .nav-links { display: none; }
+      .nav-menu-btn { display: flex; }
       .footer-inner { justify-content: center; text-align: center; }
+    }
+
+    /* ── MOBILE NAV ── */
+    .nav-menu-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color var(--ease), background var(--ease);
+    }
+    .nav-menu-btn:hover { border-color: var(--text-3); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 190;
+      background: var(--bg);
+      padding: 84px 32px 48px;
+      flex-direction: column;
+    }
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav-link {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--text);
+      text-decoration: none;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--ease);
+    }
+    .mobile-nav-link:hover { color: var(--blue); }
+
+    .mobile-nav-cta {
+      margin-top: 36px;
+      align-self: flex-start;
     }
   </style>
 </head>
@@ -1240,10 +1288,26 @@
             Download
           </a>
           <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+          <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+              <line x1="0" y1="1" x2="18" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="0" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="0" y1="13" x2="18" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </nav>
+
+  <!-- ── MOBILE NAV ── -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#screenshots" class="mobile-nav-link" onclick="closeMobileNav()">Screenshots</a>
+    <a href="#features" class="mobile-nav-link" onclick="closeMobileNav()">Features</a>
+    <a href="#race-types" class="mobile-nav-link" onclick="closeMobileNav()">Race Types</a>
+    <a href="#faq" class="mobile-nav-link" onclick="closeMobileNav()">FAQ</a>
+    <a href="https://apps.apple.com/us/app/racely/id6761856973" target="_blank" rel="noopener" class="btn btn-primary mobile-nav-cta">Download on the App Store</a>
+  </div>
 
   <!-- ── HERO ── -->
   <section id="main-content" class="hero">
@@ -1270,12 +1334,6 @@
         <a href="#features" class="btn btn-outline">Explore Features</a>
       </div>
 
-      <div class="stat-pills">
-        <span class="stat-pill"><span class="pill-dot" style="background:var(--blue)"></span>Road · Trail · Track</span>
-        <span class="stat-pill"><span class="pill-dot" style="background:var(--green)"></span>5K to Marathon &amp; Custom</span>
-        <span class="stat-pill"><span class="pill-dot" style="background:var(--purple)"></span>iCloud Sync</span>
-        <span class="stat-pill"><span class="pill-dot" style="background:var(--orange)"></span>Works Offline</span>
-      </div>
 
     </div>
   </section>
@@ -1350,7 +1408,7 @@
 
         <!-- Race History — large (2 col × 2 row) -->
         <div class="bc bc-history reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--blue)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/></svg>
           </span>
           <h3 class="bc-name">Race History</h3>
@@ -1382,7 +1440,7 @@
 
         <!-- Race Planning -->
         <div class="bc bc-planning reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--orange)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
           </span>
           <h3 class="bc-name">Race Planning</h3>
@@ -1396,7 +1454,7 @@
 
         <!-- Statistics -->
         <div class="bc bc-stats reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--purple)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </span>
           <h3 class="bc-name">Statistics</h3>
@@ -1415,7 +1473,7 @@
 
         <!-- All Distances -->
         <div class="bc bc-dist reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--green)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </span>
           <h3 class="bc-name">All Distances</h3>
@@ -1424,7 +1482,7 @@
 
         <!-- Runner Profile -->
         <div class="bc bc-profile reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--text-2)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </span>
           <h3 class="bc-name">Runner Profile</h3>
@@ -1433,7 +1491,7 @@
 
         <!-- iCloud Sync -->
         <div class="bc bc-sync reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--blue)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
           </span>
           <h3 class="bc-name">iCloud Sync</h3>
@@ -1442,7 +1500,7 @@
 
         <!-- Location -->
         <div class="bc bc-location reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--orange)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
           <h3 class="bc-name">Race Locations</h3>
@@ -1460,7 +1518,7 @@
 
         <!-- Widgets -->
         <div class="bc bc-widgets reveal">
-          <span class="bc-icon">
+          <span class="bc-icon" style="color: var(--purple)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           </span>
           <h3 class="bc-name">Home Screen Widgets</h3>
@@ -1713,6 +1771,27 @@
         localStorage.setItem('racely-theme', 'dark');
       }
     });
+
+    // ── Mobile nav ──
+    const menuBtn  = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const hamburgerIcon = `<svg width="18" height="14" viewBox="0 0 18 14" fill="none"><line x1="0" y1="1" x2="18" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="0" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="0" y1="13" x2="18" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+    const closeIcon = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="1" y1="1" x2="13" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="1" x2="1" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.contains('open');
+      mobileNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+      menuBtn.innerHTML = isOpen ? hamburgerIcon : closeIcon;
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+
+    function closeMobileNav() {
+      mobileNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.innerHTML = hamburgerIcon;
+      document.body.style.overflow = '';
+    }
 
     // ── Smooth scroll ──
     document.querySelectorAll('a[href^="#"]').forEach(a => {
