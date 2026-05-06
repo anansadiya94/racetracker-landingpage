@@ -958,6 +958,10 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .screenshot-dark { display: none; }
+    [data-theme="dark"] .screenshot-light { display: none; }
+    [data-theme="dark"] .screenshot-dark  { display: block; }
+
     .phone-frame:hover img {
       transform: translateY(-6px);
       box-shadow:
@@ -1350,27 +1354,32 @@
       <div class="screenshots-track">
 
         <div class="phone-frame reveal">
-          <img src="screenshots/onboarding.png" alt="Onboarding screen" loading="lazy" />
+          <img src="screenshots/light/onboarding.png" alt="Onboarding screen" loading="lazy" class="screenshot-light" />
+          <img src="screenshots/dark/onboarding.png"  alt="Onboarding screen" loading="lazy" class="screenshot-dark" />
           <p class="phone-label">Onboarding</p>
         </div>
 
         <div class="phone-frame reveal">
-          <img src="screenshots/past_races_list.png" alt="Past Races screen" loading="lazy" />
+          <img src="screenshots/light/past_races_list.png" alt="Past Races screen" loading="lazy" class="screenshot-light" />
+          <img src="screenshots/dark/past_races_list.png"  alt="Past Races screen" loading="lazy" class="screenshot-dark" />
           <p class="phone-label">Past Races</p>
         </div>
 
         <div class="phone-frame reveal">
-          <img src="screenshots/upcoming_races_map.png" alt="Upcoming Races screen" loading="lazy" />
+          <img src="screenshots/light/upcoming_races_map.png" alt="Upcoming Races screen" loading="lazy" class="screenshot-light" />
+          <img src="screenshots/dark/upcoming_races_map.png"  alt="Upcoming Races screen" loading="lazy" class="screenshot-dark" />
           <p class="phone-label">Upcoming Races</p>
         </div>
 
         <div class="phone-frame reveal">
-          <img src="screenshots/stats.png" alt="Statistics screen" loading="lazy" />
+          <img src="screenshots/light/stats.png" alt="Statistics screen" loading="lazy" class="screenshot-light" />
+          <img src="screenshots/dark/stats.png"  alt="Statistics screen" loading="lazy" class="screenshot-dark" />
           <p class="phone-label">Stats</p>
         </div>
 
         <div class="phone-frame reveal">
-          <img src="screenshots/profile.png" alt="Profile screen" loading="lazy" />
+          <img src="screenshots/light/profile.png" alt="Profile screen" loading="lazy" class="screenshot-light" />
+          <img src="screenshots/dark/profile.png"  alt="Profile screen" loading="lazy" class="screenshot-dark" />
           <p class="phone-label">Profile</p>
         </div>
 
@@ -1444,7 +1453,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
           </span>
           <h3 class="bc-name">Race Planning</h3>
-          <p class="bc-desc">Organize your calendar, set goal times, and track registration deadlines. Stay race-ready year-round.</p>
+          <p class="bc-desc">Organize your calendar, set goal times, and get race day reminders sent straight to your phone. Stay race-ready year-round.</p>
           <div class="plan-mock">
             <div class="plan-label">Next race · Chicago Marathon</div>
             <span class="plan-number">47</span>
